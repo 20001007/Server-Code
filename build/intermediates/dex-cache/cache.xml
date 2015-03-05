@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/citruscircuits/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="/Users/citruscircuits/AndroidstudioProjects/studentInfo/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-0bad6934f6fb5e63153657a960d9df2e52e3ac62.jar" />
+    </item>
+    <item
+        jar="/Users/citruscircuits/AndroidstudioProjects/studentInfo/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/Users/citruscircuits/AndroidstudioProjects/studentInfo/app/build/intermediates/pre-dexed/debug/classes-980624bd3c894351315abd8f84ff54daf2e1707e.jar" />
+    </item>
+    <item
+        jar="/Users/citruscircuits/AndroidstudioProjects/studentInfo/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/Users/citruscircuits/AndroidstudioProjects/studentInfo/app/build/intermediates/pre-dexed/debug/classes-906b31f6eedafb2c56b3106ebd5135a3f401dc40.jar" />
+    </item>
+    <item
+        jar="/Users/citruscircuits/AndroidstudioProjects/studentInfo/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/Users/citruscircuits/AndroidstudioProjects/studentInfo/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-a5b67def6574022c1622bc902b5f8a0b9b014ebd.jar" />
+    </item>
+    <item
+        jar="/Users/citruscircuits/AndroidstudioProjects/studentInfo/app/libs/realm-0.79.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="3a40cb80a7f1a2963fbddbb7d7e79e7e64ccceda">
+        <dex dex="/Users/citruscircuits/AndroidstudioProjects/studentInfo/app/build/intermediates/pre-dexed/debug/realm-0.79.1-e75afd1893555a40fa4a3ee1fa5ee893e6fb5bf5.jar" />
+    </item>
+
+</items>
