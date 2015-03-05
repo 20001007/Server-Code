@@ -1,13 +1,22 @@
 package citruscircuits.org.studentinfo;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.dropbox.sync.android.DbxAccountManager;
+import com.dropbox.sync.android.DbxException;
+import com.dropbox.sync.android.DbxFile;
+import com.dropbox.sync.android.DbxFileSystem;
+import com.dropbox.sync.android.DbxPath;
 
 import io.realm.Realm;
 import io.realm.RealmQuery;
@@ -15,6 +24,10 @@ import io.realm.RealmResults;
 
 
 public class MainActivity extends ActionBarActivity {
+
+    private DbxAccountManager acctManager;
+    static final int REQUEST_LINK_TO_DBX = 0;
+    DbxFileSystem dbxFs;
 
     String name;
     String email;
@@ -25,6 +38,33 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Realm pancake = Realm.getInstance(this);
+        acctManager = DbxAccountManager.getInstance(getApplicationContext(), "fu1drprr1bha4zl", "x8f4ehb2qyk30r4");
+    }
+
+    public void onClickLinkToDropbox(View view) {
+        acctManager.startLink(this, REQUEST_LINK_TO_DBX);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_LINK_TO_DBX) {
+            if (resultCode == Activity.RESULT_OK) {
+                try {
+                    dbxFs = DbxFileSystem.forAccount(acctManager.getLinkedAccount());
+                }catch(DbxException e){
+                    Log.e("Server", "Didn't create file system");
+                }
+                try {
+                    DbxFile testFile = dbxFs.create(new DbxPath("/Database File/"));
+                }catch(DbxException e){
+                    Log.e("Server", "Didn't make file");
+                }
+            } else {
+                Log.e("Server", "Link failed or was cancelled by the user");
+            }
+        } else {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
     }
 
     public void Submit(View view){
